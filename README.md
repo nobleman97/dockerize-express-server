@@ -1,4 +1,4 @@
-# Project 2: _Containerizing a Web Server, deploying using Deployments and making it accessible via Services_
+# Project 5: _Containerizing a Web Server, deploying using Deployments and making it accessible via Services_
 
 ## __Requirements__ :
 * VirtualBox
@@ -29,7 +29,7 @@ It should look something like this...
 If you'd like to ssh into the minikube node, you need to first get the node ip address and then ssh into the node like this:
 ``` $ minikube ip ```
 
-And the ssh into the the node using 
+And then ssh into the the node using 
 ```ssh docker@$(minikube ip) ```
 
 ![minikube status](./screenshots/shot2.png)
@@ -38,7 +38,7 @@ And the ssh into the the node using
 > - username: docker
 > - password: tcuser
 
-We can pull an image into the node and run it (since docker is installed into the minikube node by default) using ```kubectl``` like this:
+From our local machine, we can pull an image into the node and run it (since docker is installed into the minikube node by default) using ```kubectl``` like this:
 ``` bash
 $ kubectl run nginx-image --image=nginx
 ```
@@ -49,7 +49,7 @@ $ kubectl run nginx-image --image=nginx
 
 
 
-## Deployments, Scaling & Service _(Explanation)_
+## Deployments, Scaling & Service 
 ---
 
 The best way to manage pods within a node is by using deployment and service yaml files.
@@ -65,7 +65,7 @@ like number of replicas and the image from which the pods should be created.
 ---
 First copy the ```./k8s-web-hello``` folder and paste in your working directory
 
-> - The [index.mjs](./k8s-web-hello/index.mjs) file contains a simple web server that responds and an endpoint that responds with a greeting from the pod. \
+> - The [index.mjs](./k8s-web-hello/index.mjs) file contains a simple web server and an endpoint that responds with a greeting from the pod. \
 > - The Dockerfile contains instructions needed to build the Docker image
 
 Next, cd into the ```./k8s-web-hello``` folder and run the following command to build the docker image.
